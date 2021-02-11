@@ -3,15 +3,16 @@ import os
 import json
 from requests.packages.urllib3.packages.six.moves import urllib
 
+#개인 firebase와 연동하기 위한 firebase의 config값
 config={
-    "apiKey": "AIzaSyB5r_ChQiHWSjUwuywo-31g6cmzxW-LT9o",
-    "authDomain": "twofactor-d19ed.firebaseapp.com",
-    "databaseURL": "https://twofactor-d19ed.firebaseio.com",
-    "projectId": "twofactor-d19ed",
-    "storageBucket": "twofactor-d19ed.appspot.com",
-    "messagingSenderId": "415712167872",
-    "appId": "1:415712167872:web:9369b71a20494aba992a25",
-    "measurementId": "G-93466FBBFV"
+    "apiKey": "",
+    "authDomain": "",
+    "databaseURL": "",
+    "projectId": "",
+    "storageBucket": "",
+    "messagingSenderId": "",
+    "appId": "",
+    "measurementId": ""
 }
 
 firebase=pyrebase.initialize_app(config)
@@ -50,7 +51,7 @@ file_name=path_on_cloud[:-4] #경로에서 저장할 파일이름 추출->사번
 
 storage.child(path_on_cloud).download("recogVideo/"+file_name+".mp4") #다운받을때 저장될 파일 이름
 
-dataset_path="C:\\Users\\sksms\\PycharmProjects\\combine1\\data\\data_faces_from_camera"
+dataset_path="C:\\..\\..\\..\\..\\data\\data_faces_from_camera"
 
 #dataset에 사용자 이름으로 된 디렉토리 파일 생성해주기
 try:

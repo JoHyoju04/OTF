@@ -47,8 +47,7 @@ detector_eye = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eye"]
 
 #Firebase DB connection
-#cred = credentials.Certificate('/home/pi/raspberry_json/twofactor-d19ed-firebase-adminsdk-ml5l3-a57e510744.json')
-cred = credentials.Certificate('/home/pi/raspberry_json/otfproject-308b5-firebase-adminsdk-8s0dj-eaa5edbbd2.json')
+cred = credentials.Certificate('..') #DB연결을 위한 Firebase의 admin sdk json파일 경로
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 doc_ref = db.collection(u'TwoFactor').document(u'RaspberryPi')
